@@ -101,7 +101,7 @@ def build_docx_report():
         "Academic Internship Project Report\n"
         "AICTE | IBM SkillsBuild Data Analytics with AI Academic Internship Program 2026\n"
         "In Collaboration with BharatCares\n\n"
-        "Prepared By: Vinayak Rathi\n"
+        "Prepared By: Aditi Kongre\n"
         "Date: September 2026"
     )
     r_meta.font.name = "Calibri"
@@ -378,8 +378,8 @@ def build_docx_report():
 
     # Save to file
     os.makedirs("reports", exist_ok=True)
-    report_path_1 = "VinayakRathi_HousePricePredictionReport.docx"
-    report_path_2 = os.path.join("reports", "VinayakRathi_HousePricePredictionReport.docx")
+    report_path_1 = "AditiKongre_HousePricePredictionReport.docx"
+    report_path_2 = os.path.join("reports", "AditiKongre_HousePricePredictionReport.docx")
 
     doc.save(report_path_1)
     doc.save(report_path_2)

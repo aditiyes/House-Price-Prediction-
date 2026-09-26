@@ -1,6 +1,26 @@
 import json
 import os
 
+def preserve_outputs(cells, notebook_path):
+    if not os.path.exists(notebook_path):
+        return
+
+    with open(notebook_path, encoding="utf-8") as f:
+        previous_cells = json.load(f).get("cells", [])
+
+    outputs_by_source = {
+        "".join(cell.get("source", [])): cell
+        for cell in previous_cells
+        if cell.get("cell_type") == "code" and cell.get("outputs")
+    }
+    for cell in cells:
+        if cell.get("cell_type") != "code":
+            continue
+        previous_cell = outputs_by_source.get("".join(cell.get("source", [])))
+        if previous_cell is not None:
+            cell["execution_count"] = previous_cell.get("execution_count")
+            cell["outputs"] = previous_cell["outputs"]
+
 def create_notebook():
     cells = [
         # Section 1
@@ -11,7 +31,7 @@ def create_notebook():
                 "# 🏠 House Price Prediction System\n",
                 "## AICTE | IBM SkillsBuild Data Analytics with AI Academic Internship Program 2026 | BharatCares\n",
                 "\n",
-                "**Student Name:** Vinayak Rathi  \n",
+                "**Student Name:** Aditi Kongre  \n",
                 "**Domain:** Machine Learning & Data Analytics  \n",
                 "**Dataset:** `house_price_regression_dataset.csv`  \n",
                 "**Algorithm:** Linear Regression  \n",
@@ -296,8 +316,10 @@ def create_notebook():
     }
 
     os.makedirs("notebooks", exist_ok=True)
-    nb_path_1 = "VinayakRathi_HousePricePrediction.ipynb"
-    nb_path_2 = os.path.join("notebooks", "VinayakRathi_HousePricePrediction.ipynb")
+    nb_path_1 = "AditiKongre_HousePricePrediction.ipynb"
+    nb_path_2 = os.path.join("notebooks", "AditiKongre_HousePricePrediction.ipynb")
+    preserve_outputs(cells, nb_path_1)
+    preserve_outputs(cells, nb_path_2)
 
     with open(nb_path_1, "w", encoding="utf-8") as f:
         json.dump(nb, f, indent=2)

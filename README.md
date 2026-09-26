@@ -3,7 +3,7 @@
 > **Academic Internship Project Submission**  
 > **Program:** AICTE | IBM SkillsBuild Data Analytics with AI Academic Internship Program 2026  
 > **Partner Organization:** BharatCares  
-> **Student Name:** Vinayak Rathi  
+> **Student Name:** Aditi Kongre  
 
 ---
 
@@ -107,14 +107,14 @@ house/
 ├── frontend/
 │   └── app.py                                # Streamlit interactive web dashboard
 ├── notebooks/
-│   └── VinayakRathi_HousePricePrediction.ipynb  # Executable 22-section Jupyter Notebook
+│   └── AditiKongre_HousePricePrediction.ipynb  # Executable 22-section Jupyter Notebook
 ├── reports/
-│   └── VinayakRathi_HousePricePredictionReport.docx # Comprehensive academic report
+│   └── AditiKongre_HousePricePredictionReport.docx # Comprehensive academic report
 ├── train_model.py                             # Training & validation execution script
 ├── generate_report.py                         # Automated DOCX report generation script
 ├── app.py                                     # Streamlit entry point wrapper
-├── VinayakRathi_HousePricePrediction.ipynb        # Main submission notebook
-├── VinayakRathi_HousePricePredictionReport.docx   # Main submission report
+├── AditiKongre_HousePricePrediction.ipynb        # Main submission notebook
+├── AditiKongre_HousePricePredictionReport.docx   # Main submission report
 ├── requirements.txt                           # Python runtime dependencies
 └── README.md                                  # Project documentation
 ```
